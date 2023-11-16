@@ -1,11 +1,5 @@
 {
   "Alteran": {
-    "custom_json_data.qmod": "https://bsquest.xyz/files/custom-json-data.qmod",
-    "mods": {
-      "beatsaber": {
-        "quest": "http://bsquest.xyz/mods"
-      }
-    },
-    "youtube": "http://youtube.com"
+    "custom_json_data.qmod": "https://bsquest.xyz/files/custom-json-data.qmod"
   }
 }
