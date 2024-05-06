@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      with:
-        path: 'site'
     - name: Save token
       run: |
         echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> ModUpdater/token.txt
