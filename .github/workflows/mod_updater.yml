@@ -1,0 +1,43 @@
+name: Update mods via GitHub api
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */1 * * *'
+
+jobs:
+  updateMods:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        path: 'site'
+    - name: Copy ModUpdater
+      run: |
+        cp -R site/Programs/ModUpdater ModUpdater
+    - name: Save token
+      run: |
+        echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> ModUpdater/token.txt
+    - name: Show files
+      run: |
+        cd ModUpdater
+        ls
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Update mods
+      working-directory: 'ModUpdater'
+      run: |
+        dotnet ModUpdater.dll
+    - name: Copy updated mods
+      run: |
+        cp ModUpdater/mods_updated.json site/tools/Beat_Saber/mods.json
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        path: site
+        title: Update Mods
+        body: Updated mods via GitHub releases api
+        commit-message: Update mods (Auto)
+        branch: update-mods
