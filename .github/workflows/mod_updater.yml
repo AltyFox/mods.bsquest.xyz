@@ -23,8 +23,9 @@ jobs:
       run: |
         cd Source
         dotnet build
-    - name: Copy Blacklists to Working Directory
+    - name: Copy Blacklists and current mods.json to Working Directory
       run: |
+        cp mod_jsons/mods.json ModUpdater/Source/bin/Debug/net6.0/mods.json
         cp mod_jsons/blacklist.json ModUpdater/Source/bin/Debug/net6.0/blacklist.json
         cp mod_jsons/id_blacklist.json ModUpdater/Source/bin/Debug/net6.0/id_blacklist.json
     - name: Save token and run updater.

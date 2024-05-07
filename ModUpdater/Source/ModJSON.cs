@@ -10,11 +10,11 @@ namespace ModUpdater
 	{
 		public Dictionary<string, List<ModJSONMod>> versions = new Dictionary<string, List<ModJSONMod>>();
 
-		public static ModJSON GetCurrentMods(string modurl)
+		public static ModJSON GetCurrentMods()
 		{
 			ModJSON r = new ModJSON();
-			WebClient c = new WebClient();
-			r.versions = JsonSerializer.Deserialize<Dictionary<string, List<ModJSONMod>>>(c.DownloadString(modurl));
+			string json = File.ReadAllText("mods.json");
+			r.versions = JsonSerializer.Deserialize<Dictionary<string, List<ModJSONMod>>>(json);
 			return r;
 		}
 
