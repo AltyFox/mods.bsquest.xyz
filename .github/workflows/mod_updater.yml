@@ -27,7 +27,6 @@ jobs:
         cd Source
         dotnet build
         cd bin/Debug/net6.0/
-      run: |
         dotnet ModUpdater.dll -modurl=https://computerelite.github.io/tools/Beat_Saber/mods.json
     - name: Copy updated mods
       run: |
