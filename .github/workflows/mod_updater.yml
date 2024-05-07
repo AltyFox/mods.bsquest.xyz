@@ -27,7 +27,7 @@ jobs:
       run: |
         cd ModUpdater/Source/bin/Debug/net6.0/
         echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> token.txt
-        echo "dotnet ModUpdater.dll -modurl=https://computerelite.github.io/tools/Beat_Saber/mods.json"
+        dotnet ModUpdater.dll -modurl=https://computerelite.github.io/tools/Beat_Saber/mods.json
     - name: Copy updated mods
       run: |
           cp ModUpdater/Source/bin/Debug/net6.0/mods_updated.json mod_jsons/mods.json
