@@ -5,12 +5,13 @@ UpdateAllMods();
 
 void UpdateAllMods()
 {
-	ModJSON mods = ModJSON.GetCurrentMods();
+	string modurl = args.FirstOrDefault(arg => arg.StartsWith("-modurl="))?.Substring(8);
+	ModJSON mods = ModJSON.GetCurrentMods(modurl);
 	Dictionary<string, List<string>> idAndDownload = new Dictionary<string, List<string>>();
 	List<string> blacklistetDownloads = new List<string>();
 	List<string> idUpdateBlacklist = new List<string>();
-	if (File.Exists("blacklist.json")) blacklistetDownloads = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("blacklist.json"));
-	if (File.Exists("id_blacklist.json")) idUpdateBlacklist = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("id_blacklist.json"));
+	if (File.Exists("..\\mod_jsons\\blacklist.json")) blacklistetDownloads = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("..\\mod_jsons\\blacklist.json"));
+	if (File.Exists("..\\mod_jsons\\blacklist.jsonid_blacklist.json")) idUpdateBlacklist = JsonSerializer.Deserialize<List<string>>(File.ReadAllText("..\\mod_jsons\\id_blacklist.json"));
 	Console.WriteLine("Blacklisted downloads: " + blacklistetDownloads.Count);
 	Console.WriteLine("Blacklisted mods to update: " + idUpdateBlacklist.Count);
 	foreach (List<ModJSONMod> v in mods.versions.Values)
