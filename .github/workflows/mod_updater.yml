@@ -35,15 +35,16 @@ jobs:
     - name: Copy updated mods
       run: |
           cp ModUpdater/Source/bin/Debug/net6.0/mods_updated.json mod_jsons/mods.json
+    - name: Download core mods file
+      run: |
+            curl -L -o mod_jsons/core_mods.json https://git.bmbf.dev/unicorns/resources/-/raw/master/com.beatgames.beatsaber/core-mods.json
     - name: Format JSON files
       run: |
         cd mod_jsons
         jq . blacklist.json > blacklist.json.tmp && mv blacklist.json.tmp blacklist.json
         jq . id_blacklist.json > id_blacklist.json.tmp && mv id_blacklist.json.tmp id_blacklist.json
         jq . mods.json > mods.json.tmp && mv mods.json.tmp mods.json
-    - name: Download core mods file
-      run: |
-        curl -L -o mod_jsons/core_mods.json https://git.bmbf.dev/unicorns/resources/-/raw/master/com.beatgames.beatsaber/core-mods.json
+        jq . core_mods.json > core_mods.json.tmp && mv core_mods.json.tmp core_mods.json
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
