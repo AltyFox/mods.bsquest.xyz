@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+ModUpdater/Source/bin*
+ModUpdater/Source/obj*
+ModUpdater/Source/ref*
