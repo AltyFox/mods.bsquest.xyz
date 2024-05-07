@@ -25,6 +25,12 @@ jobs:
       working-directory: 'ModUpdater'
       run: |
         dotnet ModUpdater.dll -modurl https://computerelite.github.io/tools/Beat_Saber/mods.json
+    - name: Copy updated mods
+      run: |
+          cp ModUpdater/mods_updated.json mod_jsons/mods.json
+    - name: Download core mods file
+      run: |
+        curl -L -o mod_jsons/core_mods.json https://git.bmbf.dev/unicorns/resources/-/raw/master/com.beatgames.beatsaber/core-mods.json
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
