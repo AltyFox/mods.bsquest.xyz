@@ -18,14 +18,14 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Update mods
+    - name: Build ModUpdater
       working-directory: 'ModUpdater'
       run: |
         cd Source
         dotnet build
     - name: Save token and run updater.
       run: |
-        cd bin/Debug/net6.0/
+        cd ./bin/Debug/net6.0/
         ls
         echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> token.txt
         echo "dotnet ModUpdater.dll -modurl=https://computerelite.github.io/tools/Beat_Saber/mods.json"
