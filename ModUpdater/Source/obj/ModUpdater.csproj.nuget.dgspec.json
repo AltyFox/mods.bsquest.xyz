@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ComputerElite\\Documents\\rider\\computerelite.github.io\\Programs\\ModUpdater\\Source\\ModUpdater.csproj": {}
+    "/home/barry/mods.bsquest.xyz/ModUpdater/Source/ModUpdater.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ComputerElite\\Documents\\rider\\computerelite.github.io\\Programs\\ModUpdater\\Source\\ModUpdater.csproj": {
+    "/home/barry/mods.bsquest.xyz/ModUpdater/Source/ModUpdater.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ComputerElite\\Documents\\rider\\computerelite.github.io\\Programs\\ModUpdater\\Source\\ModUpdater.csproj",
+        "projectUniqueName": "/home/barry/mods.bsquest.xyz/ModUpdater/Source/ModUpdater.csproj",
         "projectName": "ModUpdater",
-        "projectPath": "C:\\Users\\ComputerElite\\Documents\\rider\\computerelite.github.io\\Programs\\ModUpdater\\Source\\ModUpdater.csproj",
-        "packagesPath": "C:\\Users\\ComputerElite\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ComputerElite\\Documents\\rider\\computerelite.github.io\\Programs\\ModUpdater\\Source\\obj\\",
+        "projectPath": "/home/barry/mods.bsquest.xyz/ModUpdater/Source/ModUpdater.csproj",
+        "packagesPath": "/home/barry/.nuget/packages/",
+        "outputPath": "/home/barry/mods.bsquest.xyz/ModUpdater/Source/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ComputerElite\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/barry/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -66,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.128/RuntimeIdentifierGraph.json"
         }
       }
     }

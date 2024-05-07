@@ -24,7 +24,7 @@ jobs:
     - name: Update mods
       working-directory: 'ModUpdater'
       run: |
-        dotnet ModUpdater.dll
+        dotnet ModUpdater.dll -modurl https://computerelite.github.io/tools/Beat_Saber/mods.json
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:

@@ -5,7 +5,8 @@ UpdateAllMods();
 
 void UpdateAllMods()
 {
-	ModJSON mods = ModJSON.GetCurrentMods();
+	string modurl = args.FirstOrDefault(arg => arg.StartsWith("-modurl="))?.Substring(8);
+	ModJSON mods = ModJSON.GetCurrentMods(modurl);
 	Dictionary<string, List<string>> idAndDownload = new Dictionary<string, List<string>>();
 	List<string> blacklistetDownloads = new List<string>();
 	List<string> idUpdateBlacklist = new List<string>();
