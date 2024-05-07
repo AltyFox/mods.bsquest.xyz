@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp mod_jsons/* ./dist/assets",
     "preview": "vite preview"
   },
   "dependencies": {
