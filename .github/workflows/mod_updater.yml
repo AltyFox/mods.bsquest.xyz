@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Save token
-      run: |
-        echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> ModUpdater/token.txt
     - name: Show files
       run: |
         cd ModUpdater
@@ -27,6 +24,10 @@ jobs:
         cd Source
         dotnet build
         cd bin/Debug/net6.0/
+
+    - name: Save token and run updater.
+      run: |
+        echo "Bearer ${{ secrets.GITHUB_TOKEN }}" >> ModUpdater/bin/Debug/net6.0/token.txt
         dotnet ModUpdater.dll -modurl=https://computerelite.github.io/tools/Beat_Saber/mods.json
     - name: Copy updated mods
       run: |
