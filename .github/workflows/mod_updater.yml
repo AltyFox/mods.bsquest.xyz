@@ -41,7 +41,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
-        path: mod_jsons
+        path: .
         title: Update Mods
         body: Updated mods via GitHub releases api
         commit-message: Update mods (Auto)
