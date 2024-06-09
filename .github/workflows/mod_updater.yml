@@ -56,10 +56,10 @@ jobs:
         commit-message: Update mods (Auto)
         branch: update-mod
     - name: Approve Pull Request
-      uses: juliangruber/approve-pull-request-action@v2
+      uses: peter-evans/enable-pull-request-automerge@v3
       with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ steps.cpr.outputs.pull-request-number }}
+        token: ${{ secrets.PAT }}
+        pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
             
 
           
