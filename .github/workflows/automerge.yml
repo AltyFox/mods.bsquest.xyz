@@ -1,6 +1,6 @@
 name: automerge
 env:
- MERGE_FILTER_AUTHOR: "AltyFox"
+ MERGE_FILTER_AUTHOR: "github-actions"
 on:
   pull_request:
     types:
