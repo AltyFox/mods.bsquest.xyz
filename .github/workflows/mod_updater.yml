@@ -54,14 +54,4 @@ jobs:
         body: Updated mods via GitHub releases api
         commit-message: Update mods (Auto)
         branch: update-mod
-    - name: Pause for GH to catch up
-      run: |
-        sleep 10
-  
-    - name: automerge
-      uses: "pascalgn/automerge-action@v0.16.3"
-      permissions:
-        contents: write
-      env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           
