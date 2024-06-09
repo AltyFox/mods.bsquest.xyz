@@ -53,4 +53,10 @@ jobs:
         title: Update Mods
         body: Updated mods via GitHub releases api
         commit-message: Update mods (Auto)
-        branch: update-mods
+        branch: update-mod
+        
+    - name: automerge
+      uses: "pascalgn/automerge-action@v0.16.3"
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          
