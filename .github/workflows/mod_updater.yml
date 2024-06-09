@@ -52,6 +52,9 @@ jobs:
         path: .
         title: Update Mods
         body: Updated mods via GitHub releases api
+    - name: Approve Pull Request
+      uses: juliangruber/approve-pull-request-action@v2.0.6
+            
         commit-message: Update mods (Auto)
         branch: update-mod
           
