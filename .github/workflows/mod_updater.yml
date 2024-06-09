@@ -47,6 +47,7 @@ jobs:
         jq . mods.json > mods.json.tmp && mv mods.json.tmp mods.json
         jq . core_mods.json > core_mods.json.tmp && mv core_mods.json.tmp core_mods.json
     - name: Create Pull Request
+      id: cpr
       uses: peter-evans/create-pull-request@v4
       with:
         path: .
@@ -58,7 +59,7 @@ jobs:
       uses: juliangruber/approve-pull-request-action@v2
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: 1
+          number: ${{ steps.cpr.outputs.pull-request-number }}
             
 
           
