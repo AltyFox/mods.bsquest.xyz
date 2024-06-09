@@ -57,9 +57,12 @@ jobs:
         branch: update-mod
     - name: Approve Pull Request
       uses: peter-evans/enable-pull-request-automerge@v3
+      env:
+        GH_TOKEN: ${{ github.token }}
       with:
         token: ${{ secrets.PAT }}
         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+        
             
 
           
