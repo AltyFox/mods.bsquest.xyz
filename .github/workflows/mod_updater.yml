@@ -55,13 +55,13 @@ jobs:
         body: Updated mods via GitHub releases api
         commit-message: Update mods (Auto)
         branch: update-mod
-    - name: Approve Pull Request
+    - name: Enable Pull Request Automerge
+      if: steps.cpr.outputs.pull-request-operation == 'created'
       uses: peter-evans/enable-pull-request-automerge@v3
-      env:
-        GH_TOKEN: ${{ github.token }}
       with:
         token: ${{ secrets.PAT }}
         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+        merge-method: squash
         
             
 
